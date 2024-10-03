@@ -37,3 +37,13 @@
 ## Resources
 
 - [Spotify Developer Docs](https://developer.spotify.com/documentation/web-api)
+
+## Spotify Usage Flow
+
+    - User clicks button to sign in to Spotify
+    - App redirects to Spotify's sign in page
+    - User clicks on Spotify to sign in
+    - Spotify finishes the sign in, and redirects to our designed "Redirect URI"
+    - React app detects Spotify's sign in result and processes it
+    - Save the processed result (auth/access token) to state/localstorage/context
+    - Components throughout the react app reach up to gain access token and use in fetch requests

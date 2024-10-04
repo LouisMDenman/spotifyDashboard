@@ -1,8 +1,10 @@
 import './App.css'
 import { useThemeContext } from './contexts/ThemeContextProvider'
+import { useSpotifyAuthContext } from './contexts/spotifyAuthProvider'
 
 function App() {
   const [currentTheme, toggleTheme, setToSystem] = useThemeContext()
+  const {redirectToAuthCodeFlow} = useSpotifyAuthContext() 
 
   return (
     <>
@@ -11,6 +13,9 @@ function App() {
       </button> 
       <button onClick={setToSystem}>
         Set to system theme
+      </button>
+      <button onClick={redirectToAuthCodeFlow}>
+        Sign in via Spotify
       </button>
     </>
   )

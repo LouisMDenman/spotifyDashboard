@@ -12,7 +12,7 @@ export const spotifyAuthScaffold = {
 
 export const SpotifyAuthContext = createContext(spotifyAuthScaffold)
 
-export function useSpotifyAuthcontext(){
+export function useSpotifyAuthContext(){
     return useContext(SpotifyAuthContext)
 }
 
@@ -31,7 +31,7 @@ export function SpotifyAuthProvider({children}){
         async function getAuthData(){
             const authData = await getAuthTokens(clientId, userAuthCode)
             setUserAuthData(authData)
-            window.history.replace(null, "Spotify Dashboard", "/")
+            window.history.replaceState(null, "Spotify Statsboards", "/")
         }
         if (userAuthCode) {
             getAuthData()
@@ -49,7 +49,7 @@ export function SpotifyAuthProvider({children}){
         params.append("code_verifier", verifier)
 
         const result = await fetch("https://accounts.spotify.com/api/token", {
-            metho: "POST",
+            method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: params
         })
@@ -58,7 +58,7 @@ export function SpotifyAuthProvider({children}){
         return authTokens
     }
 
-    async function redirectToAuthCodeFlow(clientId) {
+    async function redirectToAuthCodeFlow() {
         const verifier = generateCodeVerifier(128);
         const challenge = await generateCodeChallenge(verifier);
     
@@ -95,8 +95,9 @@ export function SpotifyAuthProvider({children}){
     }
 
     return (
-        <SpotifyAuthContext.Provider value={userAuthData}>
+        <SpotifyAuthContext.Provider value={{userAuthData, redirectToAuthCodeFlow}}>
             {children}
+
         </SpotifyAuthContext.Provider>
     )
 }

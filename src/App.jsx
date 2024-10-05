@@ -2,6 +2,7 @@ import './App.css'
 import { useThemeContext } from './contexts/ThemeContextProvider'
 import { useSpotifyAuthContext } from './contexts/spotifyAuthProvider'
 import { ProfileHeader } from './components/ProfileHeader'
+import { TopTracks } from './components/TopTracks'
 
 function App() {
   const [currentTheme, toggleTheme, setToSystem] = useThemeContext()
@@ -19,6 +20,7 @@ function App() {
         Sign in via Spotify
       </button>
       <ProfileHeader />
+      <TopTracks />
     </>
   )
 }

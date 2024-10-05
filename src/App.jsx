@@ -1,6 +1,7 @@
 import './App.css'
 import { useThemeContext } from './contexts/ThemeContextProvider'
 import { useSpotifyAuthContext } from './contexts/spotifyAuthProvider'
+import { ProfileHeader } from './components/ProfileHeader'
 
 function App() {
   const [currentTheme, toggleTheme, setToSystem] = useThemeContext()
@@ -17,6 +18,7 @@ function App() {
       <button onClick={redirectToAuthCodeFlow}>
         Sign in via Spotify
       </button>
+      <ProfileHeader />
     </>
   )
 }

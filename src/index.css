@@ -15,11 +15,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: light-dark(#213547, #ffffff);
   text-decoration: inherit;
 }
 a:hover {
-  color: light-dark(#747bff,#535bf2);
+  color: #646cff;
 }
 
 body {
@@ -37,8 +37,9 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid #646cff;
   padding: 0.6em 1.2em;
+  color: light-dark(#213547, #ffffff);
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -51,7 +52,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto #646cff;
 }
 
 /*

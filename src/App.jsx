@@ -1,4 +1,6 @@
 import './App.css'
+import './styles/ProfileHeader.css'
+import './styles/TopTracks.css'
 import { useThemeContext } from './contexts/ThemeContextProvider'
 import { useSpotifyAuthContext } from './contexts/spotifyAuthProvider'
 import { ProfileHeader } from './components/ProfileHeader'
@@ -10,17 +12,19 @@ function App() {
 
   return (
     <>
+    <ProfileHeader />
+    <TopTracks />
+    <div id="buttons">
       <button onClick = {toggleTheme}>
         Toggle Theme
-      </button> 
-      <button onClick={setToSystem}>
-        Set to system theme
       </button>
       <button onClick={redirectToAuthCodeFlow}>
         Sign in via Spotify
       </button>
-      <ProfileHeader />
-      <TopTracks />
+      <button onClick={setToSystem}>
+        Set to system theme
+      </button>
+    </div>
     </>
   )
 }

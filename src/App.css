@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+#buttons {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+div > button {
+  margin-right: 2em;
+  margin-left: 2em;
+}

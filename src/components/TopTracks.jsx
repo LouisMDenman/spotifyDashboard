@@ -19,11 +19,5 @@ export function TopTracks(){
                 })}
             </div>
         )
-    } else {
-        return (
-            <div id="topTracksContainer">
-                <p>Please log in to see your top tracks.</p>
-            </div>
-        )
     }
 }

@@ -1,8 +1,20 @@
 #topTracksContainer {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     .trackCard {
         width: 250px;
+        min-height: 450px;
+        border-radius: 20px;
+        border: 2px solid #646cff;
+        margin: 0.5em;
+        h2 {
+            min-height:75px;
+        }
+        h3 {
+            min-height: 85px;
+        }
         img {
             width: 150px;
         }
